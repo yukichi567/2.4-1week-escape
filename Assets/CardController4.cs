@@ -8,22 +8,34 @@ using UnityEngine.EventSystems;
 
 public class CardController4 : MonoBehaviour
 {
-    GameObject[] _answerPositions;
-    [SerializeField] float _settingArea;
+    [SerializeField]LayerMask _cardLayer;
+    Vector2 _basePosition;
+    bool _onDrag;
     void Start()
     {
-        _answerPositions = GameObject.FindGameObjectsWithTag("AnswerPosition");
+        _basePosition = transform.position;
     }
 
     void Update()
     {
-        for(int i = 0; i < _answerPositions.Length; i++)
+        //var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        //var hit = Physics2D.Raycast(ray.origin, ray.direction, 100);
+        var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        //カメラの位置からマウスの位置までRayを飛ばす
+        //RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction);
+        Debug.DrawLine(ray.origin, ray.direction, Color.red);
+        Debug.DrawRay(ray.origin, ray.direction);
+        if(Physics.Raycast(ray, out RaycastHit hit, _cardLayer))
         {
-            float dis = Vector2.Distance(transform.position, _answerPositions[i].transform.position);
-            if(dis < _settingArea)
+            Debug.Log("当たった");
+            if(Input.GetButtonDown("Fire1"))
             {
-                transform.position = _answerPositions[i].transform.position;
+                _onDrag = !_onDrag;
             }
+        }
+        if(_onDrag)
+        {
+            transform.position = Input.mousePosition;
         }
     }
 }
