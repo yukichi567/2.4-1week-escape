@@ -8,34 +8,28 @@ using UnityEngine.EventSystems;
 
 public class CardController4 : MonoBehaviour
 {
-    [SerializeField]LayerMask _cardLayer;
-    Vector2 _basePosition;
-    bool _onDrag;
-    void Start()
+    [SerializeField] Color _onSelectColor;
+    [SerializeField] Color _notSelectColor;
+    GameObject _selectButton;
+    GameObject _answerButton;
+    EventSystem eventSystem;
+    Color _myColor;
+    public bool _onSelect;
+  
+    public void SelectButton()
     {
-        _basePosition = transform.position;
+        eventSystem = EventSystem.current;
+        _selectButton = eventSystem.currentSelectedGameObject;
+        _onSelect = !_onSelect;
     }
-
-    void Update()
+    public void AnswerButton()
     {
-        //var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        //var hit = Physics2D.Raycast(ray.origin, ray.direction, 100);
-        var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        //カメラの位置からマウスの位置までRayを飛ばす
-        //RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction);
-        Debug.DrawLine(ray.origin, ray.direction, Color.red);
-        Debug.DrawRay(ray.origin, ray.direction);
-        if(Physics.Raycast(ray, out RaycastHit hit, _cardLayer))
+        eventSystem = EventSystem.current;
+        if (_onSelect)
         {
-            Debug.Log("当たった");
-            if(Input.GetButtonDown("Fire1"))
-            {
-                _onDrag = !_onDrag;
-            }
-        }
-        if(_onDrag)
-        {
-            transform.position = Input.mousePosition;
+            _onSelect = !_onSelect;
+            _answerButton = eventSystem.currentSelectedGameObject;
+            _selectButton.transform.position = _answerButton.transform.position;
         }
     }
 }
