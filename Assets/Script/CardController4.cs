@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.UI;
 
 public class CardController4 : MonoBehaviour
 {
@@ -52,9 +51,12 @@ public class CardController4 : MonoBehaviour
         eventSystem = EventSystem.current;
         if (_onSelect)
         {
+            //配列のボタンに設定さえれている要素に選択したカードの数字を格納
             _selectNumbers[number] = _selectNumber;
             _onSelect = !_onSelect;
+            //イベントシステムでアンサーポジションのオブジェクト情報を取得
             _answerButton = eventSystem.currentSelectedGameObject;
+            //選択したカードの場所をアンサーポジションの場所に変換
             _selectButton.transform.position = _answerButton.transform.position;
         }
     }
@@ -73,6 +75,7 @@ public class CardController4 : MonoBehaviour
         {
             Debug.Log("false");
             AudioController.Instance.SePlay(SelectAudio.Failed);
+            //答えが間違っていたらSelectCardを元の場所に戻す
             foreach (var obj in _dic)
             {
                 _selectObjects[obj.Key].transform.position = _dic[obj.Key];
