@@ -31,10 +31,11 @@ public class StagesClearState : MonoBehaviour
 
     private void Start()
     {
-        //もしnullじゃなかったら
-        if (_selectButton != null)
+        //もしnullじゃなかったら && クリアだったら
+        //この場合また同じステージでクリアできなかったとしても更新されない
+        if (_selectButton != null && _isClear)
         {
-            //クリア判定をDictinaryに保存
+            //クリア判定をDictinaryに保存・更新
             _stageSelectButtons[_selectButton] = _isClear;
         }
         foreach (var button in _stageSelectButtons)
@@ -58,4 +59,6 @@ public class StagesClearState : MonoBehaviour
         //シーン遷移
         SceneManager.LoadScene("Test2");
     }
+
+  
 }
