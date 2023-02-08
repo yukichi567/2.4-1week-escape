@@ -30,14 +30,6 @@ public class NinoScript : MonoBehaviour
                 _strList.RemoveRange(0, _anslist.Count);
             }
         }
-        if (_strList.Count > 0)
-        {
-            if (Input.GetKeyDown(KeyCode.Backspace))
-            {
-                _strList.RemoveAt(_strList.Count - 1);
-            }
-        }
-
         _strText.text = string.Join(",", _strList);
     }
     public void Bottun(int key)
@@ -53,6 +45,13 @@ public class NinoScript : MonoBehaviour
         if(_strList.Count < 5)
         {
             _strList.Add(dic[key]);
+        }
+    }
+    public void DeliteKey()
+    {
+        if (_strList.Count > 0)
+        {
+            _strList.RemoveAt(_strList.Count - 1);
         }
     }
 }
