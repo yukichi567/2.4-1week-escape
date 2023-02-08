@@ -18,7 +18,6 @@ public class CardController4 : MonoBehaviour
     bool _onSelect;
     string _answer = "31254";
 
-
     /// <summary>
     /// カードを選択して選択したカードのオブジェクト情報と設定された数値を変数に保管して今選んでいるかのboolを変更する
     /// </summary>
@@ -41,6 +40,7 @@ public class CardController4 : MonoBehaviour
             _onSelect = !_onSelect;
         }
     }
+
     /// <summary>
     /// 選択したカードを設置する場所を選択する、その際配列の指定の要素に選択した数字を格納する
     /// </summary>

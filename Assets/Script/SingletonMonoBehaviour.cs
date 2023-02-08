@@ -1,28 +1,23 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 
 public class SingletonMonoBehaviour<T> : MonoBehaviour where T : MonoBehaviour
 {
 	private static T _instance;
 
-	public static bool Exists
-	{
-		get
-		{
-			return _instance != null;
-		}
-	}
-
+	//継承先のクラスがアタッチされているオブジェクトを格納する
 	public static T Instance
 	{
 		get
 		{
+			//_instanceになりも格納されてなければシーン上のTクラスを持っているオブジェクトを格納する
 			if (_instance == null)
 			{
 				_instance = FindObjectOfType<T>();
+				//それでも格納されてなければエラー文を返す
 				if (_instance == null)
 				{
-					Debug.Log("�ǉ�����Ă���GameObject�����݂��܂���B");
+					Debug.Log("追加されているGameObjectが存在しません。");
 				}
 			}
 
@@ -30,6 +25,7 @@ public class SingletonMonoBehaviour<T> : MonoBehaviour where T : MonoBehaviour
 		}
 	}
 
+	//ゲーム開始時にTクラスを持ったオブジェクトをシングルトン化する
 	virtual protected void Awake()
 	{
 		if(FindObjectsOfType<T>().Length > 1)
