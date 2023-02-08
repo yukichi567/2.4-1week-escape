@@ -55,7 +55,7 @@ public class StagesClearState : MonoBehaviour
 
     private void Update()
     {
-        //EventSystemで押したButtonのゲームオブジェクトを
+        //EventSystemで押したButtonのゲームオブジェクトを取得
         if(_eventSystem.currentSelectedGameObject != null)
         {
             SelectButton(_eventSystem.currentSelectedGameObject);
