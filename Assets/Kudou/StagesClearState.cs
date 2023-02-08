@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 public class StagesClearState : MonoBehaviour
 {
-    
+    [SerializeField, Header("Event System")] EventSystem _eventSystem; 
     [SerializeField, Header("各StageSceneに遷移するButtonを表示するCanvas")] Canvas _stageCanvas;
     [SerializeField, Header("クリアしたかどうか")] public static bool _isClear;
 
@@ -13,6 +14,10 @@ public class StagesClearState : MonoBehaviour
     public static string _selectButton;
     /// <summary>Key:各StageSceneに遷移するButtonGameObjectの名前 Value:Trueだったらクリアしている</summary>
     public static Dictionary<string, bool> _stageSelectButtons = new Dictionary<string, bool>();
+    /// <summary>
+    /// 
+    /// </summary>
+    string _buttonGoName;
 
     private void Awake()
     {
@@ -42,23 +47,35 @@ public class StagesClearState : MonoBehaviour
         {
             if (button.Value == true)
             {
-                string goName = button.Key;
-                GameObject.Find(goName).transform.GetChild(0).GetComponent<Text>().text = "Clear";
+                _buttonGoName = button.Key;
+                ClearAction();
             }
         }
     }
 
-    /// <summary>ButtonオブジェクトについているOn Clickメソッドから呼ばれます</summary>
+    private void Update()
+    {
+        //EventSystemで押したButtonのゲームオブジェクトを
+        if(_eventSystem.currentSelectedGameObject != null)
+        {
+            SelectButton(_eventSystem.currentSelectedGameObject);
+        }
+    }
+    /// <summary>選択したButtonオブジェクトの名前を保存するための関数</summary>
     /// <param name="go">押されたButtonオブジェクト</param>
     public void SelectButton(GameObject go)
     {
         //選択したButtonオブジェクトの名前を保存
-        _selectButton = go.gameObject.name;
+        _selectButton = go.name;
         //staticなので初期化;
         _isClear = false;
         //シーン遷移
         SceneManager.LoadScene("Test2");
     }
 
+    public void ClearAction()
+    {
+        GameObject.Find(_buttonGoName).transform.GetChild(0).GetComponent<Text>().text = "Clear";
+    }
   
 }
