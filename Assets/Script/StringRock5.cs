@@ -1,19 +1,12 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.EventSystems;
 
-public class StringRockController : MonoBehaviour
+public class StringRock5 : MonoBehaviour
 {
     [SerializeField, Tooltip("文字を変えるオブジェクト")] GameObject _selectButton;
-    [SerializeField, Tooltip("答えを格納するスクリプト")] SelectStrings _answerButton;
     //表示させる文字
-    string _selectString = "あいきしなろ";
+    string _selectString = "あいおかきさしずみむらろ";
     int i;
-
-    private void Awake()
-    {
-        _answerButton = FindObjectOfType<SelectStrings>();
-    }
 
     //ダイアルを右回し
     public void UpKeyButton(int number)
@@ -23,7 +16,7 @@ public class StringRockController : MonoBehaviour
        //表示する文字の配列を1つ右へずらす
         char c = _selectString[i % _selectString.Length];
         //選択した文字を配列に格納する
-        _answerButton._select[number] = c;
+        SelectStrings5.Instance.Select[number] = c;
         //子オブジェクトにあるTextコンポーネントを取得
         Text keyText = _selectButton.GetComponentInChildren<Text>();
         keyText.text = c.ToString();
@@ -37,12 +30,12 @@ public class StringRockController : MonoBehaviour
         //iが-1になった時配列の最後からスタートする為のif文
         if(i == -1)
         {
-            i = 5;
+            i = _selectString.Length - 1;
         }
         //表示する文字の配列を1つ左へずらす
         char c = _selectString[i % _selectString.Length];
         //選択した文字を配列に格納する
-        _answerButton._select[number] = c;
+        SelectStrings5.Instance.Select[number] = c;
         //子オブジェクトにあるTextコンポーネントを取得
         Text　keyText = _selectButton.GetComponentInChildren<Text>();
         keyText.text = c.ToString();
