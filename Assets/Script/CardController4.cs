@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class CardController4 : MonoBehaviour
 {
@@ -45,6 +46,9 @@ public class CardController4 : MonoBehaviour
             _dic.Add(number - 1, _selectButton.transform.position);
             //今クリックしているかのboolを切り替える
             _onSelect = !_onSelect;
+            //１度押したら押せなくする(押せたらDictionaryのKeyが重複してエラーになる)
+            Button button = _selectButton.GetComponent<Button>();
+            button.interactable = false;
         }
     }
 
@@ -88,6 +92,9 @@ public class CardController4 : MonoBehaviour
             foreach (var obj in _dic)
             {
                 _selectObjects[obj.Key].transform.position = _dic[obj.Key];
+                //ボタンが元の位置に戻るときにまた押せるようにする
+                Button button = _selectObjects[obj.Key].GetComponent<Button>();
+                button.interactable = true;
             }
             _dic.Clear();
         }
