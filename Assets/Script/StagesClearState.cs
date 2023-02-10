@@ -15,7 +15,7 @@ public class StagesClearState : MonoBehaviour
     /// <summary>Key:各StageSceneに遷移するButtonGameObjectの名前 Value:Trueだったらクリアしている</summary>
     public static Dictionary<string, bool> _stageSelectButtons = new Dictionary<string, bool>();
     /// <summary>
-    /// 
+    /// Clearしているステージのボタンの名前
     /// </summary>
     string _buttonGoName;
 
@@ -38,7 +38,7 @@ public class StagesClearState : MonoBehaviour
     {
         //もしnullじゃなかったら && クリアだったら
         //この場合また同じステージでクリアできなかったとしても更新されない
-        if (_selectButton != null && _isClear)
+        if (_selectButton != null && Clearjudgment.StageClear)
         {
             //クリア判定をDictinaryに保存・更新
             _stageSelectButtons[_selectButton] = _isClear;
@@ -68,9 +68,9 @@ public class StagesClearState : MonoBehaviour
         //選択したButtonオブジェクトの名前を保存
         _selectButton = go.name;
         //staticなので初期化;
-        _isClear = false;
+        Clearjudgment.StageClear = false;
         //シーン遷移
-        SceneManager.LoadScene("Test2");
+        //SceneManager.LoadScene("Test2");
     }
 
     public void ClearAction()
