@@ -8,21 +8,16 @@ public class StagesClearState : MonoBehaviour
 {
     [SerializeField, Header("Event System")] EventSystem _eventSystem; 
     [SerializeField, Header("各StageSceneに遷移するButtonを表示するCanvas")] Canvas _stageCanvas;
-    [SerializeField, Header("クリアしたかどうか")] public static bool _isClear;
+    //[SerializeField, Header("クリアしたかどうか")] public static bool _isClear;
 
     /// <summary>選択したButtonを保存するための変数</summary>
     public static string _selectButton;
     /// <summary>Key:各StageSceneに遷移するButtonGameObjectの名前 Value:Trueだったらクリアしている</summary>
     public static Dictionary<string, bool> _stageSelectButtons = new Dictionary<string, bool>();
-    /// <summary>
-    /// Clearしているステージのボタンの名前
-    /// </summary>
-    string _buttonGoName;
 
     private void Awake()
     {
-        Debug.Log(_isClear);
-        //一番最初に行う処理・このシーンへの遷移が二回目以降の時はDictinaryに追加しないようにする
+        //一番最初に行う処理・このシーンへの遷移が二回目以降の場合はDictinaryに追加しないようにする
         if (_stageSelectButtons.Count == 0)
         {
             //Canvasの子オブジェクトの各Stageに遷移するButtonオブジェクトの名前を入れておく
@@ -32,23 +27,29 @@ public class StagesClearState : MonoBehaviour
                 _stageSelectButtons.Add(_stageCanvas.transform.GetChild(i).gameObject.name, false);
             }
         }
+        //最初はClear表示しない
+        foreach (var button in _stageSelectButtons)
+        {
+            ClearImageSetActive(false, button.Key);
+        }
     }
 
     private void Start()
     {
         //もしnullじゃなかったら && クリアだったら
-        //この場合また同じステージでクリアできなかったとしても更新されない
+        //この場合同じステージでクリアできなかったとしても更新されない
         if (_selectButton != null && Clearjudgment.StageClear)
         {
             //クリア判定をDictinaryに保存・更新
-            _stageSelectButtons[_selectButton] = _isClear;
+            _stageSelectButtons[_selectButton] = Clearjudgment.StageClear;
         }
         foreach (var button in _stageSelectButtons)
         {
+            //もしクリアしていたら
             if (button.Value == true)
             {
-                _buttonGoName = button.Key;
-                ClearAction();
+                //クリアImageを表示する
+                ClearImageSetActive(true, button.Key);
             }
         }
     }
@@ -65,17 +66,20 @@ public class StagesClearState : MonoBehaviour
     /// <param name="go">押されたButtonオブジェクト</param>
     public void SelectButton(GameObject go)
     {
-        //選択したButtonオブジェクトの名前を保存
+        //選択したButtonオブジェクトの名前をstatic変数に保存
         _selectButton = go.name;
-        //staticなので初期化;
+        //staticなのでクリア判定の変数を初期化;
         Clearjudgment.StageClear = false;
         //シーン遷移
-        //SceneManager.LoadScene("Test2");
+        SceneManager.LoadScene("Test2");
     }
 
-    public void ClearAction()
+    /// <summary>各ButtonについているClearImageを表示・非表示する関数</summary>
+    /// <param name="trueOrfalse">trueの時は表示する</param>
+    /// <param name="buttonName">Stageを選択するButtonオブジェクトの名前</param>
+    public void ClearImageSetActive(bool trueOrfalse, string buttonName)
     {
-        GameObject.Find(_buttonGoName).transform.GetChild(0).GetComponent<Text>().text = "Clear";
+        GameObject.Find(buttonName).transform.GetChild(1).gameObject.SetActive(trueOrfalse);
     }
   
 }
