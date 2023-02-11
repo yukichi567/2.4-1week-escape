@@ -1,10 +1,11 @@
 ﻿using UnityEngine;
+using System.Linq;
 
 public class SelectStrings5 : SingletonMonoBehaviour<SelectStrings5>
 {
     Clearjudgment _clearJudgement;
     //選択した文字を格納
-    char[] _select = new char[4];
+    char[] _select = Enumerable.Repeat('あ', 4).ToArray();
     //答えの文字列
     string _answer = "しろいろ";
 

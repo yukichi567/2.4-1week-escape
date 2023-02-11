@@ -5,11 +5,11 @@ public class SelectNumbers6 : SingletonMonoBehaviour<SelectNumbers6>
 {
     Clearjudgment _clearJudgement;
     //ëIëÇµÇΩï∂éöÇäiî[
-    string[] _select = new string[4];
+    char[] _select = Enumerable.Repeat('0', 4).ToArray();
     //ìöÇ¶ÇÃï∂éöóÒ
-    string[] _answer = { "VII", "II", "IV", "III"};
+    string _answer = "2085";
 
-    public string[] Select { get => _select; set => _select = value; }
+    public char[] Select { get => _select; set => _select = value; }
     private void Awake()
     {
         _clearJudgement = GetComponent<Clearjudgment>();
@@ -17,7 +17,7 @@ public class SelectNumbers6 : SingletonMonoBehaviour<SelectNumbers6>
     //ê≥âÇ©ÇîªíËÇ∑ÇÈ
     public void Answer()
     {
-        if (string.Join("", _select) == string.Join("", _answer))
+        if (string.Join("", _select) == _answer)
         {
             _clearJudgement.ClearJudgment(true);
             Debug.Log("true");
