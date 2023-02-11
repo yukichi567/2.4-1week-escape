@@ -4065,6 +4065,7 @@ GameObject:
   - component: {fileID: 1552631390}
   - component: {fileID: 1552631389}
   - component: {fileID: 1552631392}
+  - component: {fileID: 1552631393}
   m_Layer: 5
   m_Name: OKButton
   m_TagString: Untagged
@@ -4197,6 +4198,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7c8ae248e9a24e44c814490fdd3be6d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1552631393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1552631386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 188ca6c980313ef4a9eb52e0a5e25818, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1554227626
