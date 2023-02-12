@@ -182,7 +182,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 82573ac794fe791408b56535483f776b, type: 3}
     m_FontSize: 300
     m_FontStyle: 0
     m_BestFit: 0
@@ -489,7 +489,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 82573ac794fe791408b56535483f776b, type: 3}
     m_FontSize: 300
     m_FontStyle: 0
     m_BestFit: 0
@@ -756,8 +756,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1907357420}
-        m_TargetAssemblyTypeName: Scene, Assembly-CSharp
-        m_MethodName: SceneMove
+        m_TargetAssemblyTypeName: ScenSquare, Assembly-CSharp
+        m_MethodName: ScenChange
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -814,6 +814,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1907357415}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 958005ecfdee17643ae30fe676ce0b48, type: 3}
+  m_Script: {fileID: 11500000, guid: 8245112a612ebab44a04b5b7cf4f8369, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _changeScene: SelectScene

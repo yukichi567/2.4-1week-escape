@@ -13,6 +13,7 @@ public class MenuButton : MonoBehaviour
     //メニューウィンドウを表示　メニューアイコンを非表示
     public void Menu()
     {
+        AudioController.Instance.SePlay(SelectAudio.Click);
         _menuWindow.SetActive(true);
         _menuIcon.SetActive(false);
     }
@@ -20,6 +21,7 @@ public class MenuButton : MonoBehaviour
     //メニューウィンドウを非表示　メニューアイコンを表示
     public void Back()
     {
+        AudioController.Instance.SePlay(SelectAudio.Click);
         _menuWindow.SetActive(false);
         _menuIcon.SetActive(true);
     }
@@ -27,18 +29,21 @@ public class MenuButton : MonoBehaviour
     //タイトルシーンへ移動
     public void Title(string SceneName)
     {
+        AudioController.Instance.SePlay(SelectAudio.Click);
         SceneManager.LoadScene(SceneName);
     }
 
     //ステージ選択シーンへ移動
     public void StageSelect(string SceneName)
     {
+        AudioController.Instance.SePlay(SelectAudio.Click);
         SceneManager.LoadScene(SceneName);
     }
 
     //ヒント画面を表示
     public void Hint()
     {
+        AudioController.Instance.SePlay(SelectAudio.Click);
         _menuWindow.SetActive(false);
         _hintWindow.SetActive(true);
     }
@@ -46,6 +51,7 @@ public class MenuButton : MonoBehaviour
     //答え画面を表示
     public void Answer()
     {
+        AudioController.Instance.SePlay(SelectAudio.Click);
         _menuWindow.SetActive(false);
         _answerWindow.SetActive(true);
     }
@@ -53,6 +59,7 @@ public class MenuButton : MonoBehaviour
     //ヒント画面を閉じる
     public void HintBack()
     {
+        AudioController.Instance.SePlay(SelectAudio.Click);
         _hintWindow.SetActive(false);
         _menuWindow.SetActive(true);
     }
@@ -60,6 +67,7 @@ public class MenuButton : MonoBehaviour
     //答え画面を閉じる
     public void AnswerBack()
     {
+        AudioController.Instance.SePlay(SelectAudio.Click);
         _answerWindow.SetActive(false);
         _menuWindow.SetActive(true);
     }

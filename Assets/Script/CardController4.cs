@@ -13,7 +13,7 @@ public class CardController4 : MonoBehaviour
     GameObject[] _selectObjects = new GameObject[5];
     Dictionary<int, Vector2> _dic = new Dictionary<int, Vector2>();
     //↓クリア判定機能
-    //Clearjudgment _clearJugdment;
+    Clearjudgment _clearJugdment;
     //回答の数列を格納する為の配列
     int[] _selectNumbers = new int[5];
     //選択したカードに設定されている番号
@@ -24,7 +24,7 @@ public class CardController4 : MonoBehaviour
     private void Start()
     {
         //↓クリア判定機能
-        //_clearJugdment = FindObjectOfType<Clearjudgment>();
+        _clearJugdment = GetComponent<Clearjudgment>();
     }
     /// <summary>
     /// カードを選択して選択したカードのオブジェクト情報と設定された数値を変数に保管して今選んでいるかのboolを変更する
@@ -81,7 +81,7 @@ public class CardController4 : MonoBehaviour
         {
             Debug.Log("true");
             //↓クリア判定機能
-            //_clearJugdment.ClearJudgmen(true, 4);
+            _clearJugdment.ClearJudgment(true);
             AudioController.Instance.SePlay(SelectAudio.Success);
         }
         else
