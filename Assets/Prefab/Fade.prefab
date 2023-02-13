@@ -126,6 +126,7 @@ GameObject:
   - component: {fileID: 8529758755903245832}
   - component: {fileID: 6719358853761821490}
   - component: {fileID: 6115217792358735603}
+  - component: {fileID: 1279141802}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -199,7 +200,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7752233784147381992}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 5f05bca397db70e47ae11d57d024919c, type: 2}
   m_CullingMode: 0
@@ -211,3 +212,15 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1279141802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7752233784147381992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 086319805c18a2e46a05f94115cc01f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
