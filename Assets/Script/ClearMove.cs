@@ -10,6 +10,12 @@ public class ClearMove : MonoBehaviour
     void Start()
     {
         _targetObject = GetComponent<Transform>();
-        _targetObject.DOScale(_endScale.localScale, 1f).OnComplete(() => _buttons.SetActive(true)).OnComplete(() => Instantiate(_starEffect));
+        _targetObject.DOScale(_endScale.localScale, 1f).OnComplete(EndMove);
+    }
+
+    void EndMove()
+    {
+        _buttons.SetActive(true);
+        Instantiate(_starEffect);
     }
 }
