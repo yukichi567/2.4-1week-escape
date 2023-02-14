@@ -71,7 +71,7 @@ public class StagesClearState : MonoBehaviour
         //staticなのでクリア判定の変数を初期化;
         Clearjudgment.StageClear = false;
         //シーン遷移
-        SceneManager.LoadScene("Test2");
+        //SceneManager.LoadScene("Test2");
     }
 
     /// <summary>各ButtonについているClearImageを表示・非表示する関数</summary>

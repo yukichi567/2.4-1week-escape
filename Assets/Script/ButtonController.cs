@@ -7,7 +7,7 @@ public class ButtonController : MonoBehaviour
 {
     // Start is called before the first frame update
     List<string> _strList = new List<string>();
-    List<string> _ansList = new List<string>() { "3", "2", "2", "2" };
+    List<string> _ansList = new List<string>() { "4", "2", "2", "2" };
     [SerializeField] Text _passText;
     Clearjudgment _clearJudgement;
     // Start is called before the first frame update
