@@ -1,5 +1,5 @@
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class Clearjudgment : MonoBehaviour
 {
     /// <summary>クリアしたか否かを保存しておくプロパティ</summary>
@@ -13,6 +13,7 @@ public class Clearjudgment : MonoBehaviour
         if (clear) //ステージをクリアしていた場合下記に記述した処理を実行する
         {
             StageClear = true;
+            SceneManager.LoadScene("Clear4");
         }
     }
 }

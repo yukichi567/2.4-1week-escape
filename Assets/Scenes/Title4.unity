@@ -1085,7 +1085,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: d124c94b11116e54c9d1fd83a61a2d76, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8e967289a357ca64ab80afc8d2e10c79, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1400,64 +1400,60 @@ MonoBehaviour:
   - {fileID: 1517881752}
   _endPosition: {fileID: 378537197}
   _moveX: 150
---- !u!1001 &3877606566749533123
+--- !u!1001 &505529053032317664
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3877606565937532962, guid: 36acfd5a2a3b65c439f757014b95f813, type: 3}
-      propertyPath: m_Name
-      value: Audio Source
-      objectReference: {fileID: 0}
-    - target: {fileID: 3877606565937532962, guid: 36acfd5a2a3b65c439f757014b95f813, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3877606565937532967, guid: 36acfd5a2a3b65c439f757014b95f813, type: 3}
+    - target: {fileID: 414294473781704003, guid: 7a72bbd594751674f97e71784227b9ad, type: 3}
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
-    - target: {fileID: 3877606565937532967, guid: 36acfd5a2a3b65c439f757014b95f813, type: 3}
+    - target: {fileID: 414294473781704003, guid: 7a72bbd594751674f97e71784227b9ad, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 960
+      value: 980.60297
       objectReference: {fileID: 0}
-    - target: {fileID: 3877606565937532967, guid: 36acfd5a2a3b65c439f757014b95f813, type: 3}
+    - target: {fileID: 414294473781704003, guid: 7a72bbd594751674f97e71784227b9ad, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 540
+      value: 569.9743
       objectReference: {fileID: 0}
-    - target: {fileID: 3877606565937532967, guid: 36acfd5a2a3b65c439f757014b95f813, type: 3}
+    - target: {fileID: 414294473781704003, guid: 7a72bbd594751674f97e71784227b9ad, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -19.91147
       objectReference: {fileID: 0}
-    - target: {fileID: 3877606565937532967, guid: 36acfd5a2a3b65c439f757014b95f813, type: 3}
+    - target: {fileID: 414294473781704003, guid: 7a72bbd594751674f97e71784227b9ad, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 3877606565937532967, guid: 36acfd5a2a3b65c439f757014b95f813, type: 3}
+    - target: {fileID: 414294473781704003, guid: 7a72bbd594751674f97e71784227b9ad, type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3877606565937532967, guid: 36acfd5a2a3b65c439f757014b95f813, type: 3}
+    - target: {fileID: 414294473781704003, guid: 7a72bbd594751674f97e71784227b9ad, type: 3}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3877606565937532967, guid: 36acfd5a2a3b65c439f757014b95f813, type: 3}
+    - target: {fileID: 414294473781704003, guid: 7a72bbd594751674f97e71784227b9ad, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3877606565937532967, guid: 36acfd5a2a3b65c439f757014b95f813, type: 3}
+    - target: {fileID: 414294473781704003, guid: 7a72bbd594751674f97e71784227b9ad, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3877606565937532967, guid: 36acfd5a2a3b65c439f757014b95f813, type: 3}
+    - target: {fileID: 414294473781704003, guid: 7a72bbd594751674f97e71784227b9ad, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3877606565937532967, guid: 36acfd5a2a3b65c439f757014b95f813, type: 3}
+    - target: {fileID: 414294473781704003, guid: 7a72bbd594751674f97e71784227b9ad, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8181812685054192855, guid: 7a72bbd594751674f97e71784227b9ad, type: 3}
+      propertyPath: m_Name
+      value: BGM
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 36acfd5a2a3b65c439f757014b95f813, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: 7a72bbd594751674f97e71784227b9ad, type: 3}

@@ -15,7 +15,7 @@ public class CameraChenge : MonoBehaviour
     /// </summary>
     public void MainCamera()
     {
-        //AudioController.Instance.SePlay(SelectAudio.Click);
+        AudioController.Instance.SePlay(SelectAudio.Click);
         _camera[0].Priority = _priorityNum;
         _camera[1].Priority = _dwonNum;
         _camera[2].Priority = _dwonNum;
@@ -26,7 +26,7 @@ public class CameraChenge : MonoBehaviour
     /// </summary>
     public void MysteryCamera()
     {
-        //AudioController.Instance.SePlay(SelectAudio.Click);
+        AudioController.Instance.SePlay(SelectAudio.Click);
         _camera[0].Priority = _dwonNum;
         _camera[1].Priority = _priorityNum;
         _camera[2].Priority = _dwonNum;
@@ -37,7 +37,7 @@ public class CameraChenge : MonoBehaviour
     /// </summary>
     public void HintCamera()
     {
-        //AudioController.Instance.SePlay(SelectAudio.Click);
+        AudioController.Instance.SePlay(SelectAudio.Click);
         _camera[0].Priority = _dwonNum;
         _camera[1].Priority = _dwonNum;
         _camera[2].Priority = _priorityNum;
