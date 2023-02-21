@@ -11,7 +11,7 @@ public class TitleMove : MonoBehaviour
     {
         for(int i = 0; i < _title.Length; i++)
         {
-            _title[i].transform.DOJump(new Vector2(_endPosition.position.x + _x, _endPosition.position.y), 100f, 2, 3f);
+            _title[i].transform.DOJump(new Vector2(_endPosition.position.x + _x, _endPosition.position.y), 100f, 2, 3f).SetLink(gameObject);
             _x += _moveX;
         }
     }

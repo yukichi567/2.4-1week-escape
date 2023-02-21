@@ -10,7 +10,7 @@ public class ClearMove : MonoBehaviour
     void Start()
     {
         _targetObject = GetComponent<Transform>();
-        _targetObject.DOScale(_endScale.localScale, 1f).OnComplete(EndMove);
+        _targetObject.DOScale(_endScale.localScale, 1f).OnComplete(EndMove).SetLink(gameObject);
     }
 
     void EndMove()
