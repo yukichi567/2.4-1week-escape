@@ -10,22 +10,10 @@ public class MenuButton : MonoBehaviour
     [SerializeField, Tooltip("答えウィンドウ")] GameObject _answerWindow;
     [SerializeField] CinemachineVirtualCamera _mainCamera;
 
-    //メニューウィンドウを表示　メニューアイコンを非表示
-    public void Menu()
+    public void SePlay()
     {
         AudioController.Instance.SePlay(SelectAudio.Click);
-        _menuWindow.SetActive(true);
-        _menuIcon.SetActive(false);
     }
-
-    //メニューウィンドウを非表示　メニューアイコンを表示
-    public void Back()
-    {
-        AudioController.Instance.SePlay(SelectAudio.Click);
-        _menuWindow.SetActive(false);
-        _menuIcon.SetActive(true);
-    }
-
     //タイトルシーンへ移動
     public void Title(string SceneName)
     {
